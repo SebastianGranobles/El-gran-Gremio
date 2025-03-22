@@ -1,9 +1,9 @@
 //card de mascotas
 
 const pets = [
-    { id: 1, nombre: "Max", especie: "Perro", raza: "Labrador Retriever", edad: "2 años", peso: "25 kg", imagen: "fotos/perro1.jpg", whatsapp: "573001234567" },
-    { id: 2, nombre: "Luna", especie: "Gato", raza: "Siames", edad: "3 años", peso: "4 kg", imagen: "fotos/gato1.jpg", whatsapp: "573009876543" },
-    { id: 3, nombre: "Rocky", especie: "Perro", raza: "Bulldog Francés", edad: "1 año", peso: "12 kg", imagen: "fotos/perro1.jpg", whatsapp: "573008765432" }
+    { id: 1, nombre: "Max", especie: "Perro", raza: "Labrador Retriever", edad: "2 años", peso: "25 kg", imagen: "fotos/perro1.jpg", whatsapp: "573104379226" },
+    { id: 2, nombre: "Luna", especie: "Gato", raza: "Siames", edad: "3 años", peso: "4 kg", imagen: "fotos/gato1.jpg", whatsapp: "573104379226" },
+    { id: 3, nombre: "Rocky", especie: "Perro", raza: "Bulldog Francés", edad: "1 año", peso: "12 kg", imagen: "fotos/perro1.jpg", whatsapp: "573104379226" }
 ];
 
 function renderPets(filteredPets = pets) {
