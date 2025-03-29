@@ -1,5 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Gran Gremio</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,7 +20,7 @@
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
     <link rel="stylesheet" href="style.css" />
-    <title>Web Design Mastery | Pet Place</title>
+    <title>El Gran Gremio</title>
   </head>
   <body>
     <nav>
@@ -57,58 +65,68 @@
       <p class="section__subheader">Nosotros</p>
       <h2 class="section__header">Conócenos más</h2>
       <div class="intro__grid">
+        <!-- Misión -->
         <div class="intro__card">
           <div class="intro__image">
-            <img src="fotos/logo.jpg" alt="intro" />
+            <img src="fotos/Diseño sin título.png" alt="intro" />
           </div>
           <h4>Misión</h4>
           <p>
             Brindamos una segunda oportunidad a perros y gatos en abandono, rescatándolos y preparándolos para una adopción responsable.
           </p>
-          <button id="aboutBtn">Leer más</button>
+          <button class="aboutBtn" data-info="mision">Leer más</button>
         </div>
-
-        <div id="aboutModal" class="modal">
-            <div class="content-modal">
-                <span class="close">&times;</span>
-                <h2 class="section__header">Mision</h2>
-                <p>En El Gran Gremio, trabajamos para brindar una segunda oportunidad a perros y gatos en situación de abandono en Santiago de Cali. Nos dedicamos a su rescate, rehabilitación y adopción responsable, promoviendo el respeto, el bienestar animal y la educación sobre tenencia responsable en nuestra comunidad.</p>
-            </div>
+    
+        <div id="modal-mision" class="modal">
+          <div class="modal-content">
+            <span class="close" data-close="mision">&times;</span>
+            <h2 class="section__header">Misión</h2>
+            <p>En El Gran Gato, trabajamos para brindar una segunda oportunidad a perros y gatos en situación de abandono en Santiago de Cali. Nos dedicamos a su rescate, rehabilitación y adopción responsable, promoviendo el respeto, el bienestar animal y la educación sobre tenencia responsable en nuestra comunidad.</p>
+          </div>
         </div>
-
-
+    
+        <!-- Visión -->
         <div class="intro__card">
           <div class="intro__image">
-            <img src="fotos/header1.png" alt="intro" />
+            <img src="fotos/gato-vision.png" alt="intro" />
           </div>
-          <h4>Vision</h4>
+          <h4>Visión</h4>
           <p>
             Trabajamos para que más perros y gatos encuentren un hogar amoroso, promoviendo la adopción responsable y el bienestar animal en Santiago de Cali.
           </p>
-          <button id="aboutBtn">Leer más</button>
+          <button class="aboutBtn" data-info="vision">Leer más</button>
         </div>
-
-        <div id="aboutModal" class="modal">
-            <div class="content-modal">
-                <span class="close">&times;</span>
-                <h2 class="section__header">Vision</h2>
-                <p>Ser la plataforma líder en adopción de perros y gatos en Santiago de Cali, logrando que cada vez más animales encuentren un hogar amoroso. Aspiramos a crear una ciudad más consciente y comprometida con el bienestar animal, fomentando la adopción responsable como primera opción.</p>
-            </div>
+    
+        <div id="modal-vision" class="modal">
+          <div class="modal-content">
+            <span class="close" data-close="vision">&times;</span>
+            <h2 class="section__header">Visión</h2>
+            <p>Ser la plataforma líder en adopción de perros y gatos en Santiago de Cali, logrando que cada vez más animales encuentren un hogar amoroso. Aspiramos a crear una ciudad más consciente y comprometida con el bienestar animal, fomentando la adopción responsable como primera opción.</p>
+          </div>
         </div>
-
-
+    
+        <!-- Meta -->
         <div class="intro__card">
           <div class="intro__image">
-            <img src="fotos/header-bg.png" alt="intro" />
+            <img src="fotos/3.png" alt="intro" />
           </div>
           <h4>Meta a futuro</h4>
           <p>
             Para el 2030, queremos cambiar la vida de miles de animales, expandiendo nuestra labor y fomentando la adopción responsable en más ciudades.
           </p>
-          <button id="aboutBtn">Leer más</button>
+          <button class="aboutBtn" data-info="meta">Leer más</button>
+        </div>
+      </div>
+    
+      <div id="modal-meta" class="modal">
+        <div class="modal-content">
+          <span class="close" data-close="meta">&times;</span>
+          <h2 class="section__header">Meta</h2>
+          <p>Para el año 2030, El Gran Gremio busca haber facilitado la adopción de al menos 10,000 animales, expandiendo nuestra labor a nuevas ciudades y creando alianzas con organizaciones locales e internacionales. Además, queremos impulsar campañas masivas de esterilización y educación, reduciendo significativamente el número de animales en situación de calle.</p>
         </div>
       </div>
     </section>
+    
 
     <section class="pets" id="pets">
         <div class="section__container pets__container">
@@ -117,7 +135,7 @@
       
           <!-- Filtro -->
           <div class="pets__filters">
-            <input type="text" id="search" placeholder="Buscar por nombre, raza o edad..." />
+            <input type="text" id="search" placeholder="Buscar" />
             <select id="filter-species">
               <option value="all">Todas las especies</option>
               <option value="Perro">Perros</option>
@@ -128,6 +146,11 @@
           <div id="pets-container" class="pets__grid">
             <!-- Las tarjetas se generarán aquí dinámicamente -->
           </div>
+
+            <div id="image-modal" onclick="closeModal()">
+                <span>&times;</span>
+                <img id="modal-img" src="" alt="Mascota">
+            </div>
         </div>
     </section>
 
@@ -143,6 +166,11 @@
         <img src="assets/instagram-4.jpg" alt="instagram" />
       </div>
     </section>
+
+    <a href="https://wa.me/573178203103?text=¡Hola!%20Quisiera%20más%20información." class="whatsapp-float" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/124/124034.png" alt="WhatsApp">
+    </a>
+    
 
     <footer id="contact">
       <div class="section__container footer__container">
@@ -162,13 +190,13 @@
         <div class="footer__col">
           <h4>Address</h4>
           <ul class="footer__links">
-            <li><a href="#"> Santiago de Cali, Colombia</a></li>
+            <li><a href="#">Santiago de Cali, Colombia</a></li>
           </ul>
           <br />
           <h4>Inquiries</h4>
           <ul class="footer__links">
-            <li><a href="https://wa.me">+57 3104379226</a></li>
-            <li><a href="mailto:tucorreo@hotmail.com"></a>SebastianGranobles@hotmail.com</a></li>
+            <li><a href="#">+57 3104379226</a></li>
+            <li><a href="#">SebastianGranobles@hotmail.com</a></li>
           </ul>
         </div>
         <div class="footer__col">
@@ -190,6 +218,8 @@
 
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="scripts.js"></script>
+    <script src="script.js"></script>
   </body>
+</html>
+</body>
 </html>
