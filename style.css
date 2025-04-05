@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
+
+
 :root {
   --primary-color: #dcd7f8;
   --text-dark: #3f3b57;
@@ -251,17 +253,6 @@ img.header__image-bg {
   background-size: contain;
 }
 
-.intro__card:nth-child(1) div {
-  background-image: url("assets/intro-1-bg.png");
-}
-
-.intro__card:nth-child(2) div {
-  background-image: url("assets/intro-2-bg.png");
-}
-
-.intro__card:nth-child(3) div {
-  background-image: url("assets/intro-3-bg.png");
-}
 
 .intro__card div img {
   width: unset;
@@ -461,67 +452,123 @@ img.header__image-bg {
 }
 
 .pets__grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
 }
 
 .pets__card {
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    padding: 15px;
-    width: 300px;
-    text-align: center;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+  padding: 20px;
+  width: 300px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pets__card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .pets__card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 8px;
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 10px;
 }
 
 .pets__card h4 {
-    font-size: 18px;
-    margin: 10px 0;
+  font-size: 20px;
+  margin: 12px 0;
+  font-family: "Poppins", sans-serif;
+  color: #333;
 }
 
 .pets__card p {
-    font-size: 14px;
-    color: #555;
+  font-size: 15px;
+  color: #666;
+  margin-bottom: 10px;
+  font-family: "Poppins", sans-serif;
+  line-height: 1.5;
 }
 
+
 .adopt-button {
-    display: inline-block;
-    padding: 0.5rem 2rem;
-    border: 2px solid;
-    border-radius: 5rem;
-    transition: 0.3s;
-    cursor: pointer;
-    color: #483d8b;
-    border-color: #483d8b;
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  background: linear-gradient(to right, #6a5acd, #836fff);
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s ease;
 }
+
+.adopt-button:hover {
+  background: linear-gradient(to right, #836fff, #6a5acd);
+  transform: scale(1.05);
+}
+
 
 .adopt-button:hover {
     background-color: #483d8b;
     color: #fff;
 }
 
-.pets__filters {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-bottom: 20px;
+.pets__filters { 
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(8px);
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.pets__filters input, .pets__filters select {
-    padding: 8px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 14px;
+/* 🔹 Estilos mejorados de los inputs y selects */
+.pets__filters input, 
+.pets__filters select {
+  padding: 10px 15px;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  font-size: 15px;
+  outline: none;
+  transition: 0.3s ease-in-out;
+  background: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
+
+/* 🔹 Efecto hover */
+.pets__filters input:hover, 
+.pets__filters select:hover {
+  border-color: #6a5acd;
+}
+
+/* 🔹 Efecto focus */
+.pets__filters input:focus, 
+.pets__filters select:focus {
+  border-color: #483d8b;
+  box-shadow: 0 0 8px rgba(72, 61, 139, 0.5);
+}
+
+/* 🔹 Estilo específico para los selects */
+.pets__filters select {
+  cursor: pointer;
+  appearance: none; /* Oculta el estilo por defecto del navegador */
+  background: url('data:image/svg+xml;utf8,<svg fill="%23483d8b" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>') no-repeat right 12px center;
+  background-size: 16px;
+  padding-right: 35px;
+}
+
 
 /* Contenedor de la imagen con efecto */
 .image-container {
@@ -551,10 +598,10 @@ img.header__image-bg {
     cursor: pointer;
     border-radius: 5px;
     font-weight: bold;
-    display: none; /* Ocultar el botón por defecto */
+    display: none; 
 }
 
-/* Mostrar el botón solo cuando el mouse está encima */
+
 .image-container:hover .view-button {
     display: block;
 }
@@ -587,87 +634,8 @@ img.header__image-bg {
     cursor: pointer;
 }
 
-
-
-
-.service__flex {
-  margin-top: 4rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  gap: 2rem;
-  flex-wrap: wrap;
-}
-
-.service__card div {
-  margin-bottom: 2rem;
-  margin-inline: auto;
-  width: 120px;
-  aspect-ratio: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #dff3fd;
-  border-radius: 100%;
-}
-
-.service__card img {
-  max-width: 45px;
-}
-
-.service__card p {
-  font-weight: 500;
-  color: var(--text-light);
-}
-
-.client {
-  background-color: var(--primary-color);
-}
-
-.swiper {
-  margin-top: 4rem;
-  width: 100%;
-}
-
-.swiper-slide {
-  min-width: 375px;
-}
-
-.client__card {
-  padding: 1.5rem;
-  background-color: var(--white);
-  border-radius: 1rem;
-  transition: 0.3s;
-}
-
-.client__details {
-  margin-bottom: 1rem;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-.client__details img {
-  max-width: 50px;
-  border-radius: 100%;
-}
-
-.client__details h4 {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: var(--text-dark);
-}
-
-.client__details h5 {
-  font-weight: 500;
-  color: var(--text-light);
-}
-
-.client__card p {
-  color: var(--text-dark);
-}
-
-.instagram__container p {
+/*instagram*/
+.instagram__container a {
   max-width: fit-content;
   margin-bottom: 1rem;
   padding: 6px 20px;
@@ -803,6 +771,19 @@ img.header__image-bg {
     transform: scale(1.1);
 }
 
+iframe {
+  padding: 10px;
+  overflow: hidden;
+  border: none;
+  width: 100%; /* Ajusta según necesites */
+  height: 500px; /* Ajusta según el contenido */
+  scrollbar-width: none; /* Para Firefox */
+  -ms-overflow-style: none; /* Para Internet Explorer y Edge */
+}
+
+iframe::-webkit-scrollbar {
+  display: none; /* Para Chrome, Safari y Opera */
+}
 
 
 @media (width > 540px) {
@@ -926,3 +907,4 @@ img.header__image-bg {
     grid-template-columns: repeat(4, 1fr);
   }
 }
+
