@@ -11,7 +11,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="icon" type="image/x-icon" href="fotos/logo-removebg-preview.ico" />
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
     <link
       href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
       rel="stylesheet"
@@ -21,6 +27,7 @@
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
     <link rel="stylesheet" href="style.css" />
+    
     <title>El Gran Gremio</title>
   </head>
   <body>
@@ -129,93 +136,174 @@
     </section>
     
 
-    <section class="pets" id="pets">
-        <div class="section__container pets__container">
-          <p class="section__subheader">Adopciones</p>
-          <h2 class="section__header">Mascotas en Adopción</h2>
-      
-          <!-- Filtro -->
-          <div class="pets__filters">
-            <input type="text" id="search" placeholder="Buscar" />
-            <select id="filter-species">
-              <option value="all">Todas las especies</option>
-              <option value="Perro">Perros</option>
-              <option value="Gato">Gatos</option>
-            </select>
-          </div>
-      
-          <div id="pets-container" class="pets__grid">
-            <!-- Las tarjetas se generarán aquí dinámicamente -->
-          </div>
-
-            <div id="image-modal" onclick="closeModal()">
-                <span>&times;</span>
-                <img id="modal-img" src="" alt="Mascota">
-            </div>
+    <section id="pets" class="py-12 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4">
+        <p class="text-indigo-600 text-sm font-semibold uppercase text-center mb-2">Adopciones</p>
+        <h2 class="text-3xl font-bold text-gray-800 text-center mb-8">Mascotas en Adopción</h2>
+    
+        <!-- Filtros centrados -->
+        <div class="flex flex-col sm:flex-row justify-center items-center gap-4 mb-8">
+          <input
+            type="text"
+            id="search"
+            placeholder="Buscar"
+            class="px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-400 w-full sm:w-auto"
+          />
+          <select
+            id="filter-species"
+            class="px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-400 w-full sm:w-auto"
+          >
+            <option value="all">Todas las especies</option>
+            <option value="Perro">Perros</option>
+            <option value="Gato">Gatos</option>
+          </select>
         </div>
-    </section>
-
-
-
-    <section class="section__container instagram__container">
-      <a href="https://www.instagram.com/elgrangremio/">FOLLOW</a>
-      <h2 class="section__header">Instagram</h2>
-      <div class="instagram__grid">
-        <iframe src="https://www.instagram.com/p/DHtMrttxpbL/embed"></iframe>
-        <iframe src="https://www.instagram.com/p/DHtMXS8xT97/embed"></iframe>
-        <iframe src="https://www.instagram.com/p/DHtMTW8RkS7/embed"></iframe>
-        <iframe src="https://www.instagram.com/p/DHtMasMRyrc/embed"></iframe>
+    
+        <!-- Contenedor de tarjetas -->
+        <div id="pets-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 justify-items-center">
+          <!-- Tarjetas se generan dinámicamente -->
+        </div>
+    
+        <!-- Modal de imagen -->
+        <div id="image-modal" onclick="closeModal()" class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 hidden">
+          <div class="relative">
+            <span class="absolute top-2 right-2 text-white text-3xl cursor-pointer">&times;</span>
+            <img id="modal-img" src="" alt="Mascota" class="max-h-[80vh] rounded-lg shadow-lg" />
+          </div>
+        </div>
       </div>
     </section>
+    
+    
 
-    <a href="https://wa.me/573104379226?text=¡Hola!%20Quisiera%20más%20información." class="whatsapp-float" target="_blank">
+
+    <section class="bg-gray-50 py-12 px-4">
+      <div class="max-w-7xl mx-auto">
+        <!-- Encabezado -->
+        <div class="flex items-center justify-between mb-6">
+          <h2 class="text-3xl font-bold text-gray-800">Instagram</h2>
+          <a href="https://www.instagram.com/elgrangremio/" target="_blank"
+             class="text-sm font-semibold text-indigo-600 bg-indigo-100 px-4 py-1 rounded-full hover:bg-indigo-200 transition">
+            FOLLOW
+          </a>
+        </div>
+    
+        <!-- Swiper -->
+        <div class="swiper instagram-swiper">
+          <div class="swiper-wrapper">
+            <!-- Slide 1 -->
+            <div class="swiper-slide">
+              <iframe class="w-full h-[420px] rounded-lg shadow" 
+                src="https://www.instagram.com/p/DHtMrttxpbL/embed"
+                allowtransparency="true" loading="lazy">
+              </iframe>
+            </div>
+    
+            <!-- Slide 2 -->
+            <div class="swiper-slide">
+              <iframe class="w-full h-[420px] rounded-lg shadow" 
+                src="https://www.instagram.com/p/DHtMXS8xT97/embed"
+                allowtransparency="true" loading="lazy">
+              </iframe>
+            </div>
+    
+            <!-- Slide 3 -->
+            <div class="swiper-slide">
+              <iframe class="w-full h-[420px] rounded-lg shadow" 
+                src="https://www.instagram.com/p/DHtMTW8RkS7/embed"
+                allowtransparency="true" loading="lazy">
+              </iframe>
+            </div>
+    
+            <!-- Slide 4 -->
+            <div class="swiper-slide">
+              <iframe class="w-full h-[420px] rounded-lg shadow" 
+                src="https://www.instagram.com/p/DHtMasMRyrc/embed"
+                allowtransparency="true" loading="lazy">
+              </iframe>
+            </div>
+          </div>
+    
+          <!-- Flechas (opcionales) -->
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+    
+          <!-- Paginación (opcional) -->
+          <div class="swiper-pagination mt-4"></div>
+        </div>
+      </div>
+    </section>
+    
+    
+
+    <a href="https://wa.me/573178203103?text=¡Hola!%20Quisiera%20más%20información." class="whatsapp-float" target="_blank">
         <img src="https://cdn-icons-png.flaticon.com/512/124/124034.png" alt="WhatsApp">
     </a>
     
 
-    <footer id="contact">
-      <div class="section__container footer__container">
-        <div class="footer__col">
-          <div class="footer__logo">
-            <a href="#">Pet Place</a>
+    <footer id="contact" class="bg-gray-100 text-gray-800">
+      <div class="max-w-7xl mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-4 gap-8">
+        
+        <!-- Logo -->
+        <div>
+          <h4 class="text-2xl font-bold text-indigo-800 mb-4">Pet Place</h4>
+        </div>
+    
+        <!-- Company -->
+        <div>
+          <h4 class="font-semibold text-lg mb-3">Company</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#" class="hover:text-indigo-600 transition">Nosotros</a></li>
+            <li><a href="#" class="hover:text-indigo-600 transition">Adopciones</a></li>
+            <li><a href="#" class="hover:text-indigo-600 transition">Contacto y redes</a></li>
+          </ul>
+        </div>
+    
+        <!-- Address + Mapa -->
+        <div>
+          <h4 class="font-semibold text-lg mb-2">Address</h4>
+          <p class="text-sm mb-2">Cali, Colombia</p>
+          
+          <!-- Contenedor responsive con relación de aspecto -->
+          <div class="w-full aspect-video rounded-lg overflow-hidden shadow mb-4">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.817089857921!2d-76.5350823!3d3.3406754!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e30a14e0c65f317%3A0xd2a21234b2b4f63d!2sEl%20Gran%20Gremio!5e0!3m2!1ses-419!2sco!4v1712414322674!5m2!1ses-419!2sco" 
+              width="100%" 
+              height="100%" 
+              style="border:0;" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade"
+              class="rounded-xl shadow-lg"
+            ></iframe>
+          </div>
+    
+          <h4 class="font-semibold text-lg mb-2">Inquiries</h4>
+          <p class="text-sm">+57 323453221</p>
+          <p class="text-sm">correo@gmail.com</p>
+        </div>
+    
+        <!-- Redes Sociales -->
+        <div>
+          <h4 class="font-semibold text-lg mb-3">Follow Us</h4>
+          <div class="flex space-x-4">
+            <a href="#" class="bg-indigo-100 text-indigo-600 p-3 rounded-full hover:bg-indigo-200 transition">
+              <i class="ri-facebook-fill text-lg"></i>
+            </a>
+            <a href="#" class="bg-indigo-100 text-indigo-600 p-3 rounded-full hover:bg-indigo-200 transition">
+              <i class="ri-instagram-line text-lg"></i>
+            </a>
           </div>
         </div>
-        <div class="footer__col">
-          <h4>Company</h4>
-          <ul class="footer__links">
-            <li><a href="#">Nosotros</a></li>
-            <li><a href="#">Adopciones</a></li>
-            <li><a href="#">contacto y redes</a></li>
-          </ul>
-        </div>
-        <div class="footer__col">
-          <h4>Address</h4>
-          <ul class="footer__links">
-            <li><a href="#">Cali, Colombia</a></li>
-          </ul>
-          <br />
-          <h4>Inquiries</h4>
-          <ul class="footer__links">
-            <li><a href="#">+57 3104379226</a></li>
-            <li><a href="#">SebastianGranobles@hotmail.com</a></li>
-          </ul>
-        </div>
-        <div class="footer__col">
-          <h4>Follow Us</h4>
-          <ul class="footer__socials">
-            <li>
-              <a href="#"><i class="ri-facebook-fill"></i></a>
-            </li>
-            <li>
-              <a href="#"><i class="ri-instagram-line"></i></a>
-            </li>
-          </ul>
-        </div>
       </div>
-      <div class="footer__bar">
+    
+      <!-- Línea inferior -->
+      <div class="bg-gray-200 text-center py-4 text-sm text-gray-600">
         Copyright © 2025 El Gran Gremio.
       </div>
     </footer>
+    
+    
 
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
